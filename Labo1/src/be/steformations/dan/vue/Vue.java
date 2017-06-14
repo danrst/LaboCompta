@@ -1,4 +1,4 @@
-package vue;
+package be.steformations.dan.vue;
 
 import be.steformations.training.certification.controle.EtatApplication;
 

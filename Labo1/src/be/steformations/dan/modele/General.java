@@ -1,4 +1,4 @@
-package modele;
+package be.steformations.dan.modele;
 
 import java.util.TreeMap;
 
