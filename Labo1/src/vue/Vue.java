@@ -2,7 +2,7 @@ package vue;
 
 import be.steformations.training.certification.controle.EtatApplication;
 
-public class VueGeneral {
+public class Vue {
 
 	public String getScreen() {
 		StringBuilder generalBuild;

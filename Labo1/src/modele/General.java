@@ -17,4 +17,5 @@ public class General {
 		this.position = ' ';
 		this.sub = false;
 	}
+	
 }

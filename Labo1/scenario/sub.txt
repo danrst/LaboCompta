@@ -1,0 +1,9 @@
+> Compte subdivisé (O/N) :
+< n
+
+> Vos choix :
+>	subdivisible : non
+
+> Confirmer (O/N) :
+< O
+> OK.
