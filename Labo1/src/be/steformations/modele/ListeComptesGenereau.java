@@ -1,16 +1,17 @@
 package be.steformations.modele;
 
-import java.util.TreeMap;
+import java.util.HashMap;
+
 
 public class ListeComptesGenereau {
-	private TreeMap<String, CompteGeneral> compteGeneral;
+	private HashMap<String, CompteGeneral> compteGeneral;
 	
 	public ListeComptesGenereau (){
-	this.compteGeneral = new TreeMap<>();
+	this.compteGeneral = new HashMap<>();
 	}
 	
 	public void addtolist(String numero, String libelle, char position, boolean sub) {
 		
-		compteGeneral.add(numero, libelle, position, sub);
+		compteGeneral.put(key, value)
 	}
 }
