@@ -32,7 +32,7 @@ public class Builder {
 
 	private static void creerCompteG() {
 		 
-		cmptg = new CompteGeneral();
+		//cmptg = new CompteGeneral();
 		
 		System.out.println("Compte subdivisé (Oui/Nnon) ? :");
 		
