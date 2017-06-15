@@ -5,14 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import be.steformations.modele.General;
+import be.steformations.modele.CompteGeneral;
 
 public class GeneralTest {
-	private General cmptg;
+	private CompteGeneral cmptg;
 
 	@Before
 	public void init() {
-		cmptg = new General();
+		cmptg = new CompteGeneral();
 	}
 	
 	@Test

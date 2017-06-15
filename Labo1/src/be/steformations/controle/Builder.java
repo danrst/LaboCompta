@@ -3,7 +3,7 @@ package be.steformations.controle;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import be.steformations.modele.General;
+import be.steformations.modele.CompteGeneral;
 import be.steformations.vue.Vue;
 import serialisation.Exemple;
 
@@ -15,7 +15,7 @@ public class Builder {
 	
 
 
-	private static General cmptg;
+	private static CompteGeneral cmptg;
 	static Scanner sc = new Scanner(System.in);
 
 	public static void start() {
@@ -32,7 +32,7 @@ public class Builder {
 
 	private static void creerCompteG() {
 		 
-		cmptg = new General();
+		cmptg = new CompteGeneral();
 		
 		System.out.println("Compte subdivisé (Oui/Nnon) ? :");
 		

@@ -6,22 +6,25 @@ import java.util.TreeSet;
 
 
 
-public class General {
+public class CompteGeneral {
 
-	Set<General> compteGeneral = new TreeSet<General>();
 	
-	//private TreeMap<String, String> compteGeneral;
+	
 	private String numero;
 	private String libelle;
 	private char position;
 	private boolean sub;
 	
-	public General(String numero2, String libelle2, char position2, boolean sub2) {
-		//this.compteGeneral = new TreeMap<>();
+	public CompteGeneral() {
+		
 		this.numero = "";
 		this.libelle = "";
 		this.position = ' ';
 		this.sub = false;
+	}
+
+	public CompteGeneral(Object numero2, Object libelle2, Object position2, Object sub2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public void setNumero(String numero) {
@@ -44,9 +47,6 @@ public class General {
 		return sub;
 	}
 
-	public void addtolist() {
-		
-		compteGeneral.add(new General(numero, libelle, position, sub));
-	}
+
 	
 }
