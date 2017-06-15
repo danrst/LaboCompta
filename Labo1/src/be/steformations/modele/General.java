@@ -1,17 +1,23 @@
 package be.steformations.modele;
 
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
+
+
 
 public class General {
 
-	private TreeMap<String, String> compteGeneral;
+	Set<General> compteGeneral = new TreeSet<General>();
+	
+	//private TreeMap<String, String> compteGeneral;
 	private String numero;
 	private String libelle;
 	private char position;
 	private boolean sub;
 	
-	public General() {
-		this.compteGeneral = new TreeMap<>();
+	public General(String numero2, String libelle2, char position2, boolean sub2) {
+		//this.compteGeneral = new TreeMap<>();
 		this.numero = "";
 		this.libelle = "";
 		this.position = ' ';
@@ -36,6 +42,11 @@ public class General {
 	public boolean isValid() {
 		
 		return sub;
+	}
+
+	public void addtolist() {
+		
+		compteGeneral.add(new General(numero, libelle, position, sub));
 	}
 	
 }
