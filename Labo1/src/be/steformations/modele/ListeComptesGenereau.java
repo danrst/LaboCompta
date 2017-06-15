@@ -9,8 +9,8 @@ public class ListeComptesGenereau {
 	this.compteGeneral = new TreeMap<>();
 	}
 	
-	public void addtolist(Object numero, Object libelle, Object position, Object sub) {
+	public void addtolist(String numero, String libelle, char position, boolean sub) {
 		
-		compteGeneral.add(new CompteGeneral(numero, libelle, position, sub));
+		compteGeneral.add(numero, libelle, position, sub);
 	}
 }
