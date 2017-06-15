@@ -16,7 +16,7 @@ public class CompteGeneral {
 	private boolean sub;
 	
 	public CompteGeneral() {
-		
+		super();
 		this.numero = "";
 		this.libelle = "";
 		this.position = ' ';

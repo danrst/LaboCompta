@@ -12,6 +12,6 @@ public class ListeComptesGenereau {
 	
 	public void addtolist(String numero, String libelle, char position, boolean sub) {
 		
-		compteGeneral.put(key, value)
+		compteGeneral.put("1",new CompteGeneral (numero, libelle, position, sub));
 	}
 }
