@@ -4,15 +4,23 @@ import java.util.HashMap;
 
 
 public class ListeComptesGenereau {
-	private HashMap<String, CompteGeneral> compteGeneral;
+	private static HashMap<String, CompteGeneral> compteGeneral;
 	
 	public ListeComptesGenereau (){
 	this.compteGeneral = new HashMap<>();
 	}
 	
-	public void addtolist(String numero, String libelle, char position, boolean sub) {
-		// TODO verif
-		CompteGeneral cpt = new CompteGeneralSubdivisable (numero, libelle, position, sub);
+	public static void addToList(String numero, String libelle, char position, boolean sub) {
+		// TODO verification pour savoir ou va t'en dispatcher
+		if (sub && numero.length() < 6 ){
+		CompteGeneral cpt = new GeneralSubdivisable (numero, libelle, position, sub);
 		compteGeneral.put(numero,cpt);
+		}else if (sub && numero.length() == 6 ){
+			CompteGeneral cpt = new GeneralSubdivisabkeParticulier (numero, libelle, position, sub);
+			compteGeneral.put(numero,cpt);
+		}else if (!sub){
+			CompteGeneral cpt = new GeneralNonSubdivisable (numero, libelle, position, sub);
+			compteGeneral.put(numero,cpt);
+		}
 	}
 }
