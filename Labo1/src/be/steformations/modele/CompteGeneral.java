@@ -1,21 +1,69 @@
 package be.steformations.modele;
 
 import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import be.steformations.vue.Vue;
 
 public class CompteGeneral extends Compte {
 
 	static Scanner sc = new Scanner(System.in);
 
-	private static boolean sub = false;
-	private static String numero = "";
-	char position = ' ';
+	public static boolean sub = false;
+	public static String numero = "";
+	public static String libelle = "";
+	public static Character position = ' ';
 
-	public static void creer() {
+	public static void Creer() {
 
-		System.out.println("Compte subdivisé (O/N) ? :");
+		Subdivise();
+		Numero();
+		Libelle();
+		Position();
+		System.out.println("je passe par ici ? ");
+		Vue.AfficheCompteAvantConfirmer();
+		System.out.println("je passe par ici  après afficher? ");
+
+		char confirme = sc.nextLine().charAt(0);
+		if (confirme == 'O') {
+			ListeComptesGenereau.addToList(numero, libelle, position, sub);
+			System.out.println("le compte a été créé.");
+
+		}
+	}
+
+	public static void Position() {
+		System.out.println("Position bilan (A/B/C/D) :");
+		position = sc.nextLine().charAt(0);
+		/*while ((Character.toUpperCase(position) == 'A') && (Character.toUpperCase(position) == 'B')
+				&& (Character.toUpperCase(position) == 'C') && (Character.toUpperCase(position) == 'D')) {
+			System.out.println("(A/B/C/D) :");
+			position = sc.nextLine().charAt(0);
+		}*/
+	}
+
+	public static void Libelle() {
+		System.out.println("Libellé :");
+		libelle = sc.nextLine();
+		while (((libelle.equals(null) || libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]")))) {
+			System.out.println("null, vide, caractères invisible :");
+			libelle = sc.nextLine();
+		}
+	}
+
+	public static void Numero() {
+		System.out.println("Quel est le numéro du compte :");
+		numero = sc.nextLine();
+		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
+			System.out.println("Uniquement [0-9] et pas plus de 6 chiffres :");
+			numero = sc.nextLine();
+		}
+
+		while (!sub && numero.length() < 6) {
+			numero = numero + "0";
+		}
+	}
+
+	public static void Subdivise() {
+		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
 		Character tmp = sc.nextLine().charAt(0);
 
 		while (!((Character.toUpperCase(tmp) == 'O') || (Character.toUpperCase(tmp) == 'N'))) {
@@ -26,41 +74,20 @@ public class CompteGeneral extends Compte {
 		if (tmp == 'o' || tmp == 'O') {
 			sub = true;
 		}
+	}
 
-		System.out.println("Numéro du compte :");
-		numero = sc.nextLine();
-		while (!(numero.matches("[0-9]+")) && (numero.length() <= 6 || numero.length() > 0)) {
-			System.out.println("Uniquement [0-9] et pas plus de 6 :");
-			numero = sc.nextLine();
-		}
+	public static void modifier() {
+		// TODO Auto-generated method stub
 
-		while (!sub && numero.length() < 6) {
-			numero = numero + "0";
-		}
+	}
 
-		System.out.println("Libellé :");
-		String libelle = sc.nextLine();
-		// il laisse passer les espaces et tab
-		while ((libelle.length() < 0) || (libelle.equals(null) || (libelle.isEmpty()))) {
-			System.out.println("null, vide, caractères invisible :");
-			libelle = sc.nextLine();
-		}
+	public static void supprimer() {
+		// TODO Auto-generated method stub
 
-		System.out.println("Position bilan (a/b/c/d) :");
-		char position = sc.nextLine().charAt(0);
+	}
 
-		System.out.println("Vos choix :");
-		System.out.println("Création d'un compte général.");
-		System.out.println("\t" + "Numero : " + numero);
-		System.out.println("\t" + "Libellé : " + libelle);
-		System.out.println("\t" + "Position dans le bilan : " + position);
-		System.out.println("\t" + "subdivisible : " + sub);
-		System.out.println("Confirmer (O/N) :");
-		char confirme = sc.nextLine().charAt(0);
-		if (confirme == 'O') {
-			ListeComptesGenereau.addToList(numero, libelle, position, sub);
-			System.out.println("le compte a été créé.");
+	public static void lister() {
+		// TODO Auto-generated method stub
 
-		}
 	}
 }
