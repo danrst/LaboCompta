@@ -3,30 +3,32 @@ package be.steformations.controle;
 import java.util.Scanner;
 
 import be.steformations.modele.CompteGeneral;
+import be.steformations.modele.ListeComptesGenereau;
 import be.steformations.vue.Vue;
 
-public class ControleurCompteGeneral  {
-	
+public class ControleurCompteGeneral {
 
-	private static Scanner sc = new Scanner(System.in);
-	static CompteGeneral cmpt= new CompteGeneral();
-	
-	public static void creer() {
-		
+	private Scanner sc = new Scanner(System.in);
+	private CompteGeneral cmpt;
+	private Vue vue = new Vue();
+	private ListeComptesGenereau listeCG = new ListeComptesGenereau();
+
+	public void creer() {
+		cmpt = new CompteGeneral();
 		Subdivise();
 		Numero();
 		Libelle();
 		Position();
-		System.out.println(Vue.AfficheCompteAvantConfirmer ());
+		System.out.println(vue.AfficheCompteAvantConfirmer(cmpt));
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
-			//ListeComptesGenereau.addToList(numero, libelle, position, sub);
+			listeCG.addToList(cmpt);
 			System.out.println("le compte a été créé avec succès.");
-	}
-
 		}
 
-	private static  void Subdivise() {
+	}
+
+	private void Subdivise() {
 		System.out.println("Le compte doit-il être subdivisé (O/N) ? :");
 		Character sub = sc.nextLine().charAt(0);
 
@@ -40,7 +42,7 @@ public class ControleurCompteGeneral  {
 		}
 	}
 
-	public static void Numero() {
+	public void Numero() {
 		System.out.println("Quel est le numéro du compte :");
 		String numero = sc.nextLine();
 		while ((!(numero.matches("[0-9]+"))) || numero.length() > 6 || numero.length() < 1) {
@@ -54,7 +56,7 @@ public class ControleurCompteGeneral  {
 		cmpt.setNum(numero);
 	}
 
-	public static void Libelle() {
+	public void Libelle() {
 		System.out.println("Libellé :");
 		String libelle = sc.nextLine();
 		while (((libelle.equals(null) || libelle.isEmpty() || libelle.matches("[\\s\\t\\n\\r\\f\\v]")))) {
@@ -64,12 +66,12 @@ public class ControleurCompteGeneral  {
 		cmpt.setLibelle(libelle);
 	}
 
-	public static void Position() {
+	public void Position() {
 		System.out.println("Position bilan (A/B/C/D) :");
 		char position = sc.nextLine().charAt(0);
-		while ( !(Character.toString(position).matches("[A-D?]"))){
+		while (!(Character.toString(position).matches("[A-D?]"))) {
 			System.out.println("Position bilan (a/b/c/d) :");
-			 position = sc.nextLine().charAt(0);
+			position = sc.nextLine().charAt(0);
 		}
 		cmpt.setPosition(position);
 	}

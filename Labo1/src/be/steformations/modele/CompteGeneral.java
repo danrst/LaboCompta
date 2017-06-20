@@ -2,19 +2,24 @@ package be.steformations.modele;
 
 public class CompteGeneral extends Compte {
 
-	public boolean sub;
-	public String numero;
-	public String libelle;
-	public char position;
-	//private TreeMap<String, Item> itemMap;
+	private boolean sub;
+	private String numero;
+	private String libelle;
+	private char position;
 
-	public CompteGeneral (){
+	public CompteGeneral (String numero2, String libelle2, char position2){
+		this.numero = numero2;
+		this.libelle = libelle2;
+		this.position = position2;
+	}
+	
+	public CompteGeneral() {
 		this.sub = false;
 		this.numero = "";
 		this.libelle = "";
-		this.position = ' ';
+		this.position = 0;
 	}
-	
+
 	public void setSub(boolean b) {
 		this.sub = true;
 	}

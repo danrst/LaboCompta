@@ -8,12 +8,13 @@ import be.steformations.vue.Vue;
 public class Builder {
 
 	public void start() {
+		ControleurCompteGeneral ctrlCG = new ControleurCompteGeneral();
 		Scanner sc = new Scanner(System.in);
 		System.out.println(Vue.getScreen());
 		int choix = Integer.parseInt(sc.nextLine());
 		switch (choix) {
 		case 1:
-			ControleurCompteGeneral.creer();
+			ctrlCG.creer();
 			break;
 		case 2:
 			//CompteGeneral.modifier();
