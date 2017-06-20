@@ -1,13 +1,11 @@
 package be.steformations.controle;
 
 import java.util.Scanner;
-
-import be.steformations.modele.CompteGeneral;
 import be.steformations.vue.Vue;
 
 public class Builder {
 
-	public void start() {
+	public void Start() {
 		ControleurCompteGeneral ctrlCG = new ControleurCompteGeneral();
 		Scanner sc = new Scanner(System.in);
 		System.out.println(Vue.getScreen());
@@ -41,5 +39,4 @@ public class Builder {
 		}
 
 	}
-
 }
