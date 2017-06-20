@@ -15,12 +15,6 @@ public class GeneralTest {
 		cmptg = new CompteGeneral();
 	}
 	
-	@Test
-	public void testisSubDiv() {
-		cmptg.setValid(true);
-		assertTrue ("le compte est subdivisable", cmptg.isValid());
-		
-		
-	}
+
 
 }

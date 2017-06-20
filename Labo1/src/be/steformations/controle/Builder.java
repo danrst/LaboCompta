@@ -7,25 +7,22 @@ import be.steformations.vue.Vue;
 
 public class Builder {
 
-	private static int choix;
-
-	static Scanner sc = new Scanner(System.in);
-
-	public static void start() {
+	public void start() {
+		Scanner sc = new Scanner(System.in);
 		System.out.println(Vue.getScreen());
-		choix = Integer.parseInt(sc.nextLine());
+		int choix = Integer.parseInt(sc.nextLine());
 		switch (choix) {
 		case 1:
-			CompteGeneral.Creer();
+			ControleurCompteGeneral.creer();
 			break;
 		case 2:
-			CompteGeneral.modifier();
+			//CompteGeneral.modifier();
 			break;
 		case 3:
-			CompteGeneral.supprimer();
+			//CompteGeneral.supprimer();
 			break;
 		case 4:
-			CompteGeneral.lister();
+			//CompteGeneral.lister();
 			break;
 		case 5:
 			//CompteParticulier.creer();
