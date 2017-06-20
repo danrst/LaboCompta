@@ -26,7 +26,7 @@ public class Vue {
 		menu.append(String.format("Entrez votre choix: "));
 		return menu.toString();
 	}
-	public static String AfficheCompteAvantConfirmer (){
+	/*public static String AfficheCompteAvantConfirmer (){
 		menu = new StringBuilder();
 		cmpt = new 
 		menu.append(String.format("Vos choix :"));
@@ -43,5 +43,5 @@ public class Vue {
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("Confirmer (O/N) :"));
 		return menu.toString();
-	}
+	}*/
 }
