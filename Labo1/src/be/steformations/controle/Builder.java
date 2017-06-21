@@ -11,9 +11,9 @@ public class Builder {
 	Vue vue = new Vue();
 
 	public void Start() {
+		ControleurCompteGeneral ctrlCG = new ControleurCompteGeneral();
 		while (Character.toUpperCase(continuer) == 'O') {
 			vue.getScreenMenu();
-			ControleurCompteGeneral ctrlCG = new ControleurCompteGeneral();
 			// ControleurCompteParticulier cptPart = new
 			// ControleurCompteParticulier();
 
