@@ -4,8 +4,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
+import be.steformations.vue.Vue;
+
 public class ListeComptesGenereau {
 	private HashMap<String, CompteGeneral> compteGeneral;
+	
+	private Vue vue = new Vue();
 
 	public ListeComptesGenereau() {
 		this.compteGeneral = new HashMap<>();
@@ -19,7 +23,7 @@ public class ListeComptesGenereau {
 
 		boolean ajoutOK = false;
 		ajoutOK = compteGeneral.containsKey(numero);
-		System.out.println("Le hashMap contien déjà le numero ? " + ajoutOK);
+		
 
 		/*
 		 * Iterator it = compteGeneral.keySet().iterator(); while
@@ -44,5 +48,12 @@ public class ListeComptesGenereau {
 		}
 		return ajoutOK;
 	}
-
+	
+	public void afficheLigne(CompteGeneral cmpt) {
+		String numeroDouble = cmpt.getNumero();
+		
+		cmpt = compteGeneral.get(numeroDouble);
+		vue.AfficheCompteAvantConfirmerCg(cmpt);
+		
+	}
 }

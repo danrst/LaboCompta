@@ -25,7 +25,8 @@ public class ControleurCompteGeneral {
 			if (!(listeCG.addToList(cmpt))) {
 				System.out.println("le compte a été créé avec succès.");
 			} else {
-				System.out.println("désolé");
+				System.out.println("désolé la ligne existe déjà : ");
+				listeCG.afficheLigne(cmpt);
 
 			}
 
