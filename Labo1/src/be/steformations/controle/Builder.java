@@ -39,7 +39,13 @@ public class Builder {
 				ctrlCG.creer();
 				break;
 			case 2:
-				// CompteGeneral.modifier();
+				ctrlCG.modifier();
+				break;
+			case 3:
+				ctrlCG.supprimer();
+				break;
+			case 4:
+				ctrlCG.lister();
 				break;
 			}
 

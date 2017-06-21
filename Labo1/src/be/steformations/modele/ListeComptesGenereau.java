@@ -2,7 +2,9 @@ package be.steformations.modele;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Set;
+
 
 import be.steformations.vue.Vue;
 
@@ -14,6 +16,8 @@ public class ListeComptesGenereau {
 	public ListeComptesGenereau() {
 		this.compteGeneral = new HashMap<>();
 	}
+	
+	
 
 	public boolean addToList(CompteGeneral cmpt) {
 		String numero = cmpt.getNumero();
@@ -21,16 +25,8 @@ public class ListeComptesGenereau {
 		char position = cmpt.getPosition();
 		boolean sub = cmpt.isSub();
 
-		boolean ajoutOK = false;
-		ajoutOK = compteGeneral.containsKey(numero);
+		boolean ajoutOK = getContainOuPas(numero);
 		
-
-		/*
-		 * Iterator it = compteGeneral.keySet().iterator(); while
-		 * (it.hasNext()){ if ()
-		 * 
-		 * }
-		 */
 		if (!(ajoutOK)) {
 			if (sub && numero.length() < 6) {
 				
@@ -48,6 +44,13 @@ public class ListeComptesGenereau {
 		}
 		return ajoutOK;
 	}
+
+	public boolean getContainOuPas(String numero) {
+		//s'il est dedans il met true
+		boolean ajoutOK = false;
+		ajoutOK = compteGeneral.containsKey(numero);
+		return ajoutOK;
+	}
 	
 	public void afficheLigne(CompteGeneral cmpt) {
 		String numeroDouble = cmpt.getNumero();
@@ -56,4 +59,28 @@ public class ListeComptesGenereau {
 		vue.AfficheCompteAvantConfirmerCg(cmpt);
 		
 	}
+
+	public void modifie(CompteGeneral cmpt, String numero2) {
+		String numero = cmpt.getNumero();
+		String libelle = cmpt.getLibelle();
+		char position = cmpt.getPosition();
+		boolean sub = cmpt.isSub();
+		//a verifier
+		CompteGeneral cpt = new GeneralSubdivisable(numero, libelle, position, sub);
+		compteGeneral.put(numero2, cpt);
+		
+		
+	}
+
+	public void supprime(String numero) {
+		compteGeneral.remove(numero);
+	}
+
+
+
+	public Iterator<Entry<String, CompteGeneral>>  iterator() {
+		
+		return this.compteGeneral.entrySet().iterator();
+	}
+	
 }

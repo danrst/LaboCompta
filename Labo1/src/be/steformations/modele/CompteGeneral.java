@@ -53,4 +53,10 @@ public class CompteGeneral extends Compte {
 	public char getPosition(){
 		return position;
 	}
+
+	@Override
+	public String toString() {
+		return "CompteGeneral [sub=" + sub + ", numero=" + numero + ", libelle=" + libelle + ", position=" + position
+				+ "]";
+	}
 }

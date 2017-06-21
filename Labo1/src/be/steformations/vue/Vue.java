@@ -66,7 +66,7 @@ public class Vue {
 		menu = new StringBuilder();
 		menu.append(String.format("Vos choix :"));
 		menu.append(String.format(System.lineSeparator()));
-		menu.append(String.format("Création d'un compte général."));
+		//menu.append(String.format("Création d'un compte général."));
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("\t" + "Numero : " + pCmptG.getNumero()));
 		menu.append(String.format(System.lineSeparator()));
@@ -76,7 +76,7 @@ public class Vue {
 		menu.append(String.format(System.lineSeparator()));
 		menu.append(String.format("\t" + "subdivisible : " + pCmptG.isSub()));
 		menu.append(String.format(System.lineSeparator()));
-		menu.append(String.format("Confirmer (O/N) :"));
+		//menu.append(String.format("Confirmer (O/N) :"));
 		System.out.println(menu.toString());
 	}
 
