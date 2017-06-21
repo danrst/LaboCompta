@@ -33,7 +33,7 @@ public class CompteGeneral extends Compte {
 		this.numero = numero;
 	}
 	
-	public String getNum() {
+	public String getNumero() {
 		return numero;
 	}
 

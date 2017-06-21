@@ -12,15 +12,14 @@ public class ListeComptesGenereau {
 	}
 
 	public boolean addToList(CompteGeneral cmpt) {
-		String numero = cmpt.getNum();
+		String numero = cmpt.getNumero();
 		String libelle = cmpt.getLibelle();
 		char position = cmpt.getPosition();
 		boolean sub = cmpt.isSub();
 
 		boolean ajoutOK = false;
-		System.out.println(ajoutOK);
 		ajoutOK = compteGeneral.containsKey(numero);
-		System.out.println(ajoutOK);
+		System.out.println("Le hashMap contien déjà le numero ? " + ajoutOK);
 
 		/*
 		 * Iterator it = compteGeneral.keySet().iterator(); while
@@ -30,11 +29,10 @@ public class ListeComptesGenereau {
 		 */
 		if (!(ajoutOK)) {
 			if (sub && numero.length() < 6) {
-				System.out.println("Je rentre dans l'ajout");
+				
 				CompteGeneral cpt = new GeneralSubdivisable(numero, libelle, position, sub);
-				System.out.println("Size of the map: "+ compteGeneral.size());
 				compteGeneral.put(numero, cpt);
-				System.out.println("Size of the map: "+ compteGeneral.size());
+				System.out.println("Taille de map après ajout: "+ compteGeneral.size());
 				
 			} else if (sub && numero.length() == 6) {
 				CompteGeneral cpt = new GeneralSubdivisabkeParticulier(numero, libelle, position, sub);
@@ -44,7 +42,6 @@ public class ListeComptesGenereau {
 				compteGeneral.put(numero, cpt);
 			}
 		}
-		System.out.println(ajoutOK);
 		return ajoutOK;
 	}
 

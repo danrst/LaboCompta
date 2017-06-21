@@ -19,7 +19,7 @@ public class ControleurCompteGeneral {
 		Numero();
 		Libelle();
 		Position();
-		System.out.println(vue.AfficheCompteAvantConfirmer(cmpt));
+		vue.AfficheCompteAvantConfirmerCg(cmpt);
 		char confirme = sc.nextLine().charAt(0);
 		if (confirme == 'O') {
 			if (!(listeCG.addToList(cmpt))) {
@@ -74,7 +74,7 @@ public class ControleurCompteGeneral {
 	public void Position() {
 		System.out.println("Position bilan (A/B/C/D) :");
 		char position = sc.nextLine().charAt(0);
-		while (!(Character.toString(position).matches("[A-D?]"))) {
+		while (!(Character.toString(position).toUpperCase().matches("[A-D?]"))) {
 			System.out.println("Position bilan (a/b/c/d) :");
 			position = sc.nextLine().charAt(0);
 		}
